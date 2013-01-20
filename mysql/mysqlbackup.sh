@@ -25,6 +25,7 @@ else
     chmod 400 $BACKUP_HOME/$DATABASE-mysql-opts
 fi
     
+echo "Dumping database $DATABASE"
 mysqldump --defaults-file=$BACKUP_HOME/$DATABASE-mysql-opts -h localhost -u $DATABASE $DATABASE > $BACKUP_HOME/$DATABASE.sql
 
 if [ -f $BACKUP_HOME/$DATABASE.sql ]; then
