@@ -29,6 +29,7 @@ svnadmin dump $SVN_PATH > $BACKUP_HOME/$SVN_NAME.svn
 if [ -f $BACKUP_HOME/$SVN_NAME.svn ]; then
     gzip $BACKUP_HOME/$SVN_NAME.svn
     mv $BACKUP_HOME/$SVN_NAME.svn.gz $BACKUP_HOME/$SVN_NAME-`date +%y%m%d`.svn.gz
+    echo "Backup available at $BACKUP_HOME/$SVN_NAME-`date +%y%m%d`.svn.gz"
     exit $SUCCESS
 else
     echo "Error: backup could not be completed."
